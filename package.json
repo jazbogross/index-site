@@ -29,20 +29,21 @@
   },
   "main": "index.js",
   "dependencies": {
-    "date-fns": "^2.29.3",
     "@staticcms/core": "^4.0.0",
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "to-string-loader": "^1.2.0"
+    "to-string-loader": "^1.2.0",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
-    "@types/react": "^18.2.33",
     "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/register": "^7.21.0",
-    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "@types/react": "^18.2.33",
     "assets-webpack-plugin": "^7.1.1",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
