@@ -72,6 +72,10 @@
   background-color: var(--black);
 }
 
+.bg-green {
+  background-color: var(--green);
+}
+
 .bg-fix-primary {
   padding: 0 var(--spacing-small);
   & :first-child {

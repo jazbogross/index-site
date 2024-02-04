@@ -11,7 +11,6 @@ const PostPreview = ({ entry, widgetFor, collection, field }) => {
       <h1 className="f2 lh-title b mb3">{entry.data.title}</h1>
       <div className="flex justify-between grey-3">
         <p>{format(parseISO(entry.data.date), "iii, MMM d, yyyy")}</p>
-        <p>Read in x minutes</p>
       </div>
       <div className="cms mw6">
         <p>{entry.data.description}</p>
