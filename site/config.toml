@@ -1,7 +1,13 @@
-baseurl = "/"
+baseurl = "https://radiant-trifle-780080.netlify.app/"
 languageCode = "da"
 languageLang = "da"
-title = "Palæstinas Plads"
+title = "Palæstinas Plads"  
+
+[params]
+  description = "Tesla's Awesome Hugo Site"
+  instaUrl = "https://instagram.com"
+  twitterUrl = "https://twitter.com"
+  facebookUrl = "https://facebook.com"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 

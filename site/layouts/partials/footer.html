@@ -5,13 +5,10 @@
 			<p class="f3 lh-title light-gray b tc mb2">Nyhedsbrev</p>
 			{{ partial "newsletter-form" . }}
 		</div>
-		<div class="flex-ns justify-center">
+		<div class="flex justify-center">
 			<div>
-				<p class="f3 lh-title light-gray b tc mb2 flex justify-between align-center">Sociale Medier</p>
-				<ul class="mhn2 flex justify-between align-center">
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-twitter") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-instagram") }}
+				<ul class="mhn2 flex-ns justify-between align-center">
+					{{ partial "social-icons" . }}
 				</ul>
 			</div>
 		</div>
