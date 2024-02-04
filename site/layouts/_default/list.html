@@ -4,7 +4,7 @@
 	<div class="ph3 mw7 center">
 
 		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range .Data.Pages }}
+			{{ range .Site.RegularPages }}
 				<div class="ph1-ns w-50-ns flex">
 					{{ .Render "li" }}
 				</div>
