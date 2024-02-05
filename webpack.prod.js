@@ -17,7 +17,7 @@ module.exports = merge(common, {
   },
 
   optimization: {
-    minimize: false,
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
