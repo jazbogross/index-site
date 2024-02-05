@@ -2,8 +2,8 @@
 	<div class="w-100 h-100 no-underline pa0 absolute br1" style="{{ if .Params.image }}background-image: url({{ .Params.image }}); {{ end }}  background-repeat: no-repeat; background-position: 50% 0; background-size: cover; opacity: 0.1;">
 
 	</div>
-	<h2 class="f3 pl3 pt3 b lh-title mb1 primary">{{ .Title }}</h2>
-	<p class="mid-gray pl3 lh-title mb2">{{ .Date.Format "Jan 2, 2006" }}</p>
-	<p class="mb0 pl3">{{ .Description }}</p>
-	<p class="link b dib black mb0 pb3 pl3">Læs mere →</p>
+	<h2 class="f3 pl3 pr3 pt3 b lh-title mb1 primary">{{ .Title }}</h2>
+	<p class="mid-gray pr3 pl3 lh-title mb2">{{ .Date.Format "Jan 2, 2006" }}</p>
+	<p class="mb0 pl3 pr3">{{ .Description }}</p>
+	<p class="link b dib black mb0 pb3 pl3 pr3">Læs mere →</p>
 </a>
