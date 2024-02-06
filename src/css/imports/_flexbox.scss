@@ -1,3 +1,8 @@
+// Breakpoints for responsiveness
+$breakpoint-not-small: 40em;
+$breakpoint-medium: 50em;
+$breakpoint-large: 60em;
+
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }
 
