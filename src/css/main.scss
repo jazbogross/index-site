@@ -80,8 +80,8 @@
   @use './imports/_variables';
   
   /* Debugging */
-  // @use './imports/_debug-children';
-  // @use './imports/_debug-grid';
+  @use './imports/_debug-children';
+  @use './imports/_debug-grid';
   
   /* Uncomment out the line below to help debug layout issues */
   /*@use './imports/_debug';*/
