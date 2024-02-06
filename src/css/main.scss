@@ -92,7 +92,7 @@
 
 
 
-@custom-media --breakpoint-not-small min-width: 40em;
+$breakpoint-not-small: 40em;
 
 @custom-media --breakpoint-medium screen and (min-width: 50em);
 
@@ -157,7 +157,7 @@
 .order-8 { order: 8; }
 .order-last { order: 99999; }
 
-@media screen and (--breakpoint-not-small) {
+@media screen and (min-width: $breakpoint-not-small) {
   .flex-ns { display: flex; }
   .inline-flex-ns { display: inline-flex; }
   .flex-auto-ns {
