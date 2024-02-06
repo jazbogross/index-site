@@ -30,11 +30,11 @@ module.exports = merge(common, {
       new CssMinimizerPlugin({
         minimizerOptions: {
           preset: [
-            'advanced',
+            'default',
             {
               // Disable certain optimizations that may be too aggressive
               discardComments: { removeAll: true }, // Removes all comments
-              normalizeWhitespace: false, // Set to false to avoid removing whitespace
+              mergeRules: false,
               // Add additional options that you want to disable or configure
             },
           ],
