@@ -3,13 +3,21 @@ import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import React from "react";
 
-const PostPreview = ({ entry, widgetFor }) => {
-  const data = entry.get('data'); // Assuming entry is an Immutable.js Map
-  const image = useMediaAsset(data.get('image')); // Adjusted for direct .get() on Immutable.js Map
-  const youtubeLink = data.get('youtubelink'); // Direct .get() from entry data
+const PostPreview = ({ entry, widgetFor, collection, field }) => {
+  const data = entry.get('data'); // Assuming this works as expected in your environment
+  const image = useMediaAsset(data.get('image'), collection, field, entry);
+  const youtubeLink = data.get('youtubelink'); // Directly access the YouTube link like other fields
 
-  // Simplified without the extractVideoID function for clarity
-  const youtubeEmbedUrl = youtubeLink ? `https://www.youtube.com/embed/${youtubeLink}` : '';
+  // Function to extract the YouTube video ID from the URL
+  const extractVideoID = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  const videoId = youtubeLink ? extractVideoID(youtubeLink) : null;
+  const youtubeEmbedUrl = videoId ? `https://www.youtube.com/embed/${videoId}` : '';
 
   return (
     <div className="mw6 center ph3 pv4">
@@ -20,7 +28,7 @@ const PostPreview = ({ entry, widgetFor }) => {
       <div className="cms mw6">
         <p>{data.get('description')}</p>
         {image && <img src={image} alt={data.get('title')} />}
-        {youtubeLink && (
+        {youtubeEmbedUrl && (
           <iframe
             width="560"
             height="315"
