@@ -1,18 +1,37 @@
 {{ define "main" }}
-
 <div class="bg-off-white pv4">
 	<div class="ph3 mw7 center">
-
 		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range .Site.RegularPages }}
+      {{ $paginator := .Paginate (.Site.RegularPages) }}
+			{{ range $paginator.Pages }}
 				<div class="ph1-ns w-50-ns flex-ns">
 					{{ .Render "li" }}
 				</div>
 			{{ end }}
 		</div>
 
+		<!-- Pagination Navigation -->
+    <div class="flex justify-center w-100">
+      {{ if gt $paginator.TotalPages 1 }}
+      <nav class="pagination inline-flex b--solid bw1 pa2" role="navigation" aria-label="pagination">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}" class="pagination-prev no-underline pr2" rel="prev">Previous</a>
+        {{ end }}
+        <ul class="pagination-list inline-flex">
+          {{ range $paginator.Pagers }}
+            <li>
+              <a href="{{ .URL }}" class="pr2 {{ if eq . $paginator }} no-underline primary {{ else }} no-underline {{ end }}" aria-label="Goto page {{ .PageNumber }}">{{ .PageNumber }}</a>
+            </li>
+          {{ end }}
+        </ul>
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}" class="pagination-next no-underline" rel="next">Next</a>
+        {{ end }}
+      </nav>
+    {{ end }}
+    </div>
 
 	</div>
 </div>
-
-{{end}}
+{{ end }}
+ 

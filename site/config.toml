@@ -4,6 +4,7 @@ languageLang = "da"
 title = "Palæstinas Plads"  
 
 [params]
+  paginate = 10
   description = "Tesla's Awesome Hugo Site"
   instaUrl = "https://www.instagram.com/kunstparade/"
   twitterUrl = "https://twitter.com"
