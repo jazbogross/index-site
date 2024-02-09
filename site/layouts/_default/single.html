@@ -7,7 +7,11 @@
     </div>
     <div class="cms mw6">
       <p>{{ .Description }}</p>
+      {{ with .Params.youtubelink }}
+      <iframe width="560" height="315" src="{{ .Params.youtubelink }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      {{ else }}
       {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+      {{ end }}
       {{ .Content }}
     </div>
   </div>
