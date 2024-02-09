@@ -27,7 +27,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ if .IsHome }} {{ $.Site.Title }} {{ else }} {{ .Title }} | {{ $.Site.Title }} {{ end }}">
 	<meta property="og:url" content="{{ absURL . }}">
-	<meta property="og:image" content="{{ if .IsHome }} {{ else }} {{ .Params.image }} {{ end }}">
+	<meta property="og:image" content="{{ if .IsHome }} {{ $.Site.BaseURL }} {{ else }} {{ .Params.image }} {{ end }}">
 
   {{ if .IsHome }}
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
