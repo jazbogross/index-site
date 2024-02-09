@@ -1,8 +1,8 @@
-<div class="no-underline mb2 db w-100 inline-flex-ns">
-    <a href="{{ .RelPermalink }}" class="no-underline w-50-ns">
-        <div class="{{ with .Params.image }}post-image{{else}}bg-green{{ end }} h-100 pa0 br1 " style="{{ if .Params.image }}background-image: url({{ .Params.image }}); {{ end }} background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; ">{{ with .Params.image }}{{ else }} <p style="font-family: PalestineTitle; font-size: 50px; word-break: break-all; line-height: 42px; overflow: hidden; max-height: 300px; padding-left: 10px; padding-right: 10px; padding-top: 10px; margin-bottom: 0px;">Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine</p> {{ end }}</div>
+<div class="mb4 db w-100 inline-flex-ns">
+    <a href="{{ .RelPermalink }}" class="no-underline {{with .Params.image }}db{{ end }} h4 h-100-ns w-100 w-50-ns ">
+        <div class="{{ with .Params.image }}post-image{{else}}bg-green{{ end }} overflow-hidden h4 h-100-ns w-100 pa0 br1" style="{{ if .Params.image }}background-image: url({{ .Params.image }}); {{ end }} background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; ">{{ with .Params.image }}{{ else }} <p style="font-family: PalestineTitle; font-size: 50px; word-break: break-all; line-height: 42px; max-height: 300px; padding-left: 10px; padding-right: 10px; padding-top: 10px; margin-bottom: 0px;">Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine Free Palestine</p> {{ end }}</div>
     </a>
-    <a href="{{ .RelPermalink }}" class="no-underline w-50-ns pl3 pr3">
+    <a href="{{ .RelPermalink }}" class="no-underline w-100 w-50-ns pl3 pr3">
 
         <h2 class="f3 b lh-title mb1 primary" style="hyphens: auto; margin-top: -6px;">{{ .Title }}</h2>
         <p class="f6 grey-3 br1 lh-title mb2">{{ .Date.Format "Jan 2, 2006" }}</p>

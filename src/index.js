@@ -32,6 +32,8 @@ document.head.appendChild(style);
 
 // a script to move the images around on the homepage
 document.addEventListener('DOMContentLoaded', () => {
+    // Resize the video when the script loads
+    resizeVideo();
 
     const postImages = document.querySelectorAll('.post-image');
   
@@ -62,7 +64,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  function resizeVideo() {
+    var video = document.getElementById('youtubeVideo');
+    // If the video element does not exist, do nothing and exit the function
+    if (!video) {
+      return;
+    }
 
-  
-  
-console.log("🦊 Hello! Edit me in src/index.js");
+    var windowWidthPx = window.innerWidth; // Window width in pixels
+    var emSize = parseFloat(getComputedStyle(document.body).fontSize); // Convert the base font-size to pixels for accurate em to px conversion
+    var maxWindowWidthEm = 40; // The maximum window width in em
+    var maxWindowWidthPx = maxWindowWidthEm * emSize; // Convert 40em to pixels based on current font size
+
+    var padding = 40; // Base padding value
+
+    if (windowWidthPx < maxWindowWidthPx) {
+      var effectiveWidth = windowWidthPx - padding; // Default effective width calculation
+
+      if (windowWidthPx >= 570 && windowWidthPx <= 720) {
+        // For window widths between 570px and 720px, adjust padding or scale differently
+        effectiveWidth = windowWidthPx - 100; // Increase padding for this range to reduce video width
+      }
+
+      // Adjust the iframe width attribute instead of style
+      video.setAttribute('width', effectiveWidth.toString());
+    } else {
+      // Optionally, reset to default width if window width is >= 40em
+      video.setAttribute('width', '560'); // Reset to a default width or specify a fallback width
+    }
+  }
+
+
+
+  // Add an event listener to resize the video whenever the window's size changes
+  window.addEventListener('resize', resizeVideo);
